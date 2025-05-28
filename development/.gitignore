@@ -1,4 +1,5 @@
-
+# dbt folders
 target/
 dbt_packages/
 logs/
+seeds/
