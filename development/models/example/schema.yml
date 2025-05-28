@@ -20,6 +20,8 @@ models:
         description: "Gender of people"
         data_tests:
           - not_null
+          - accepted_values:
+              values: ['M', 'F']
       
       - name: age_of_death
         description: "Age of death"
