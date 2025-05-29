@@ -2,10 +2,8 @@
     materialized='incremental',
     on_schema_change='sync_all_columns',
     unique_key='Id',
-    tags=['development', 'raw'],
+    tags=['development', 'staging'],
     partition_by={'field': 'Birth year', 'data_type': 'integer'}
-
-    
     ) 
 }}
 
@@ -18,7 +16,7 @@ with example_data as (
         , "Gender"       as gender
         , "Age of death" as age_of_death
     
-    from development.people_dataset
+    from {{ source('development', 'people_dataset') }}
     limit 100
 )
 
