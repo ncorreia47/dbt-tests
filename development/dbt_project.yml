@@ -32,6 +32,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   development:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    staging:
+      +schema: stg
+      +materialized: ephemeral
+    
+    marts:
+      +schema: marts
       +materialized: view
+    
+    audit:
+      +materialized: view
+      +schema: audit
+
     

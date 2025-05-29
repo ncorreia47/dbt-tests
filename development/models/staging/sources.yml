@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: development
+    database: dbt  
+    schema: development
+    tables:
+      - name: case_statement
+      - name: people_dataset
